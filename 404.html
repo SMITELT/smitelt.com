@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Page Not Found - SMITELT</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="canonical" href="https://smitelt.com" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        /* Hide scrollbar */
+        body {
+            overflow: hidden;
+        }
+        /* Disable text selection */
+        * {
+            user-select: none; /* Standard */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer */
+        }
+    </style>
+</head>
+<body class="bg-[#1F1F1F] text-gray-100 font-sans flex flex-col min-h-screen" oncontextmenu="return false;">
+    <!-- Updated Header with Proper Logo Sizing -->
+    <header class="fixed w-full top-0 z-30 bg-[#1F1F1F]/95 backdrop-blur-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="inline-block">
+                <img src="/logo.png" alt="SMITELT Logo" class="h-20 w-48 object-contain">
+            </a>
+            <button id="mobile-menu-button" class="md:hidden p-2">
+                <svg class="w-8 h-8 text-[#13D7E6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu (Same as other pages) -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-40 hidden bg-[#232323]/95 backdrop-blur-sm">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="https://smitelt.com" class="text-2xl hover:text-[#13D7E6] transition-colors">Home</a>
+            <a href="https://smitelt.com/index.html#about" class="text-2xl hover:text-[#13D7E6] transition-colors">About</a>
+            <a href="https://smitelt.com/contact.php" class="text-2xl hover:text-[#13D7E6] transition-colors">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto" data-aos="fade-up">
+                <div class="text-[80px] md:text-[150px] font-bold mb-4 bg-gradient-to-r from-[#13D7E6] to-[#0685BA] bg-clip-text text-transparent">
+                    404
+                </div>
+                <h1 class="text-2xl md:text-3xl font-semibold mb-4" data-aos="fade-up" data-aos-delay="200">
+                    Lost in Digital Space
+                </h1>
+                <p class="text-gray-400 mb-6 text-base md:text-lg" data-aos="fade-up" data-aos-delay="300">
+                    The page you're looking for has been displaced or doesn't exist.<br>
+                    Let's get you back to familiar territory.
+                </p>
+                <div class="floating mb-6" data-aos="fade-up" data-aos-delay="400">
+                    🚀
+                </div>
+                    <a href="https://smitelt.com" 
+                       class="inline-block bg-[#13D7E6] hover:bg-[#0685BA] text-[#232323] font-semibold py-3 px-8 rounded-lg transition-all">
+                        Return to Home
+                    </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true, // Animations will only happen once
+            mirror: false, // Disable mirroring (animations won't repeat on scroll up)
+            startEvent: 'DOMContentLoaded' // Trigger animations when the page loads
+        });
+
+        // Force AOS to refresh and trigger animations immediately
+        window.addEventListener('load', () => {
+            AOS.refresh();
+        });
+
+        // Mobile menu toggle (same as contact.php)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
