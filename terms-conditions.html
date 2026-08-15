@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Terms & Conditions - SMITELT</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="canonical" href="https://smitelt.com/terms-conditions.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Hide scrollbar for IE, Edge and Firefox */
+        html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Disable text selection */
+        * {
+            user-select: none; /* Standard */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer */
+        }
+    </style>
+</head>
+<body class="bg-[#232323] text-gray-100" oncontextmenu="return false;">
+    <!-- Header (Same as privacy policy) -->
+    <nav class="fixed w-full bg-[#232323]/90 backdrop-blur-md z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center">
+                    <img src="/logo.png" alt="SMITELT Logo" class="h-20 w-auto max-w-xs">
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-[#13D7E6] transition-colors">Home</a>
+                    <a href="index.html#about" class="hover:text-[#13D7E6] transition-colors">About</a>
+                    <a href="contact.php" class="hover:text-[#13D7E6] transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-40 hidden bg-[#232323]/95 backdrop-blur-sm">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html" class="text-2xl hover:text-[#13D7E6] transition-colors">Home</a>
+            <a href="index.html#about" class="text-2xl hover:text-[#13D7E6] transition-colors">About</a>
+            <a href="contact.php" class="text-2xl hover:text-[#13D7E6] transition-colors">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-40 pb-32">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-[#13D7E6] to-[#0685BA] bg-clip-text text-transparent" data-aos="fade-up">
+                Terms & Conditions
+            </h1>
+            
+            <div class="space-y-8" data-aos="fade-up" data-aos-delay="200">
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#13D7E6]">1. Acceptance of Terms</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        By accessing and using our website, you accept and agree to be bound by these Terms 
+                        and Conditions. If you disagree with any part, you may not access our services.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#13D7E6]">2. Intellectual Property</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        All technological solutions and digital assets developed by SMITELT remain our exclusive 
+                        property. Unauthorized use or distribution of our innovations is strictly prohibited.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#13D7E6]">3. Innovation Development</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        We reserve the right to continuously improve and modify our technological offerings 
+                        without prior notice, ensuring we deliver state-of-the-art solutions.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4 text-[#13D7E6]">4. Copyright Notice</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        All content, design, code, and materials on this website are owned by SMITELT. Unauthorized copying or use is prohibited.
+                    </p>
+                </section>
+
+                <!-- Add more sections as needed -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Same as privacy policy) -->
+    <footer class="border-t border-[#13D7E6]/20 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                &copy; 2025 SMITELT. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts (Same as privacy policy) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Mobile menu toggle (same as contact.php)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+    </script>
+</body>
+</html> 
